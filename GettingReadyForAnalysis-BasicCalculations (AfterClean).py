@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 # Getting ready to analyze data now that it's clean
 
 import pandas as pd
@@ -57,9 +54,6 @@ data['PSSScore'] = data[PSSList].sum(axis=1)
 data[['PSSQ1','PSSQ2','PSSQ3','PSSQ4','PSSQ5','PSSQ6','PSSQ7','PSSQ8','PSSQ9','PSSQ10', 'PSSScore']].head(10)
 
 
-# In[ ]:
-
-
 # Graphing PSS Scores in Boxplot
 
 import matplotlib.pyplot as plt
@@ -82,8 +76,6 @@ plt.xlabel('Score')
 plt.show()
 
 
-# In[ ]:
-
 
 # Using two values less than the lower quartile and three values more than the third quartile to determine
 # low, moderate, and high stress groups in order to ensure all groups have a suffient amount of responses
@@ -100,7 +92,6 @@ def mapPSSNumberSignificance(x):
 data['PSS_Stress_Level'] = data.PSSScore.apply(mapPSSNumberSignificance)
 
 
-# In[ ]:
 
 
 # Mapping all likert scale to ordinal values for the rest of the questions
@@ -183,7 +174,6 @@ for col in cols_to_map:
 print(data['aware_my_thoughts'].value_counts())
 
 
-# In[ ]:
 
 
 # Grouping data by stress level and storing new grouped dataframe to be able to upload to new filw
@@ -196,7 +186,6 @@ low = df.iloc[1]
 med = df.iloc[2]
 
 
-# In[ ]:
 
 
 # Printing mean values by stress level for each question
@@ -214,7 +203,6 @@ for i in range(len(df.columns)):
     means_across_questions_values(df.columns[i])
 
 
-# In[ ]:
 
 
 # Function to print three way by stress level box chart for any question
@@ -260,7 +248,6 @@ for i in range(len(z)):
     boxChartHLM(quest, num)
 
 
-# In[ ]:
 
 
 # For fun: Printing circle charts of responses to all questions
