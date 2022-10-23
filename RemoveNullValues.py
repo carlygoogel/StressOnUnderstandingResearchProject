@@ -1,31 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 # Removing responses with null values
 
 
-# In[ ]:
-
-
-# Accounting For nulls Values On PSS questions 
+# Checking For nulls Values On PSS questions 
 df1 = data[['ID','PSSQ1','PSSQ2','PSSQ3','PSSQ4','PSSQ5','PSSQ6','PSSQ7','PSSQ8','PSSQ9','PSSQ10']]
 df1 = df1[df1.isna().any(axis=1)]
 print(df1)
-
-
-# In[ ]:
 
 
 delete_indexes_null_pss = [3, 18, 80, 96, 109, 212, 359]
 
 for ind in delete_indexes_null_pss:
     data.drop([ind], inplace=True)
-
-
-# In[ ]:
 
 
 # Using the entire dateframe, remove responses that have more than 4 null values (accounting for
