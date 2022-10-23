@@ -3,17 +3,11 @@
 
 # # Cleaning Data By Removing Responses That Took Less Than Five Minutes To Complete
 
-# In[1]:
-
-
 # Import data
 import pandas as pd
 import numpy as np
 pd.set_option('display.max_columns', None)
 data = pd.read_csv('Stress and Understanding Survey Final.csv')
-
-
-# In[33]:
 
 
 # Use timestamps if time spent is less than 5 minutes ==> delete response
@@ -48,9 +42,6 @@ print(f'Start Time: {startTime[:5]}')
 print(f'End Time: {endTime[:5]}')
 
 
-# In[34]:
-
-
 # Create list of times based on difference in end time and start time
 
 times = []
@@ -65,8 +56,6 @@ for i in range(len(startTime)):
 # to look these responses over to make sure reliable / decide to keep or rid
 print(f'Times: {times[:5]}')
 
-
-# In[35]:
 
 
 # Map times to response index in dictionary while accounting for the indexes that were previously deleted
@@ -90,8 +79,6 @@ five_items = take(5, timeDict.items())
 print(five_items)
 
 
-# In[36]:
-
 
 # Print response index with time spent for where time is less than 5 minutes
 
@@ -106,10 +93,4 @@ for i in range(len(timeDict)):
             print(f'Index: {i}')
             print(f'Time: {x}')
             print('\n')
-
-
-# In[ ]:
-
-
-
 
