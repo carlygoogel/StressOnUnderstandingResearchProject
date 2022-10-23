@@ -12,7 +12,7 @@ data = pd.read_csv('Stress and Understanding Survey Final.csv')
 
 # Use timestamps if time spent is less than 5 minutes ==> delete response
 # Change string start and end dates into double datatypes and append into startTime and endTime lists
-deletedIndexes = [3, 18, 80, 96, 109, 212, 359]
+deletedIndexes = [3, 77, 124, 173, 204, 233, 235, 274, 293, 330, 345] # Deleted due to too many null
 
 startTime = []
 endTime = []
