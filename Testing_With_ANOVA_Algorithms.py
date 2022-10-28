@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import statsmodels.api as sm
 from statsmodels.formula.api import ols
 
 
-# In[ ]:
+
 
 
 # Function to be able to pass in part of dataframe and generate swarmplot boxplot and statistical values
@@ -34,7 +34,7 @@ def generate_graph(df, title):
     print(anova_table)
 
 
-# In[ ]:
+
 
 
 # Uploading stored dataframe from previous file grouped by high, moderate, and low stress
@@ -43,7 +43,7 @@ get_ipython().run_line_magic('store', '-r df')
 df
 
 
-# In[ ]:
+
 
 
 # Setting high stress group of dataframe to high, low to low, moderate to mod
@@ -53,7 +53,7 @@ low = df.iloc[1]
 mod = df.iloc[2]
 
 
-# In[ ]:
+
 
 
 # Printing all survey questions next to index from 1-50 to be able to easily refference 
@@ -64,7 +64,7 @@ for i in range(len(df.columns)):
     print(f'{i}: {col}')
 
 
-# In[ ]:
+
 
 
 # Since the swarmplot boxplot and ANOVA require the same sized groups,
@@ -95,7 +95,7 @@ def sameLengthList(ques):
 # # Ex: Generating graphs and pvalue for Ability to Understand What Another Person Is Thinking / Feeling
 # ## This section ran analysis on 8 questions:  I feel like I have a strong understanding of that person’s emotions, I know what that person is thinking, I feel like I have a strong understanding of that person’s emotions (1),  I know what that person is thinking (1), I feel like I have a strong understanding of that person’s emotions (2),I know what that person is thinking (2), I feel like I have a strong understanding of that person’s emotions (3) ,I know what that person is thinking (3)
 
-# In[ ]:
+
 
 
 # Using function sameLengthList to print out first 64 values to each question included in this analysis by 
@@ -114,13 +114,13 @@ dfotherFeelingsandThoughts
 generate_graph2(dfotherFeelingsandThoughts,'Understanding What Another Person Is Thinking / Feeling ')
 
 
-# In[ ]:
+
 
 
 # The above process was repeated for each comparison analyzed using different questions
 
 
-# In[ ]:
+
 
 
 # Below is how the comparisons were made for how much a participant thought about themself verses thinking
@@ -132,7 +132,7 @@ generate_graph2(dfotherFeelingsandThoughts,'Understanding What Another Person Is
 # ## To questions thinking about themself
 # ## Questions: I considered that I might have an external reason to check the time, I considered the emotional effect the situation would have on me, I considered the emotional effect the situation would have on me.1
 
-# In[ ]:
+
 
 
 # Printing values for each stress level to questions thinking about themself
@@ -174,7 +174,7 @@ print('\n Mod Thinking Self - Other')
 print(MSelfMinusOther)
 
 
-# In[ ]:
+
 
 
 # Running ANOVA and generating graph based on these difference values
@@ -188,7 +188,7 @@ dfsectionSOindividual
 generate_graph2(dfsectionSOindividual,'Thinking About Self - Thinking About Other')
 
 
-# In[ ]:
+
 
 
 # The above was repeated to calculate self in right - other in right 
